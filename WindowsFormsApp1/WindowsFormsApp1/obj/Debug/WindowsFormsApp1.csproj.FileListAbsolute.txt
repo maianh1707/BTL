@@ -1,0 +1,16 @@
+D:\CodeC_LaptrinhNET\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+D:\CodeC_LaptrinhNET\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+D:\CodeC_LaptrinhNET\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+D:\CodeC_LaptrinhNET\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
+D:\CodeC_LaptrinhNET\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+D:\CodeC_LaptrinhNET\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+D:\CodeC_LaptrinhNET\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+D:\CodeC_LaptrinhNET\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+D:\CodeC_LaptrinhNET\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+D:\CodeC_LaptrinhNET\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.ResolveComReference.cache
+D:\CodeC_LaptrinhNET\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Forms.frmTimHDBan.resources
+D:\CodeC_LaptrinhNET\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Forms.Chucvu.resources
+D:\CodeC_LaptrinhNET\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Forms.Mua.resources
+D:\CodeC_LaptrinhNET\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Forms.Baocaothuchi.resources
+D:\CodeC_LaptrinhNET\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Forms.Banhang.resources
+D:\CodeC_LaptrinhNET\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Forms.Baocaodanhsachbanhang.resources
