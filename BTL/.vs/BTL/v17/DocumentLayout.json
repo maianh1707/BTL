@@ -1,18 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\HKII 2024\\L\u1EADp tr\u00ECnh .Net\\BTL\\",
+  "WorkspaceRootPath": "D:\\HKII 2023 - 2024\\BTL\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E3065D59-83BE-4CB0-A526-B949667FBAF0}|BTL.csproj|d:\\hkii 2024\\l\u1EADp tr\u00ECnh .net\\btl\\sp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E3065D59-83BE-4CB0-A526-B949667FBAF0}|BTL.csproj|solutionrelative:sp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{E3065D59-83BE-4CB0-A526-B949667FBAF0}|BTL.csproj|d:\\hkii 2023 - 2024\\btl\\forms\\sp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3065D59-83BE-4CB0-A526-B949667FBAF0}|BTL.csproj|solutionrelative:forms\\sp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E3065D59-83BE-4CB0-A526-B949667FBAF0}|BTL.csproj|d:\\hkii 2024\\l\u1EADp tr\u00ECnh .net\\btl\\sp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E3065D59-83BE-4CB0-A526-B949667FBAF0}|BTL.csproj|solutionrelative:sp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E3065D59-83BE-4CB0-A526-B949667FBAF0}|BTL.csproj|d:\\hkii 2023 - 2024\\btl\\forms\\sp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E3065D59-83BE-4CB0-A526-B949667FBAF0}|BTL.csproj|solutionrelative:forms\\sp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E3065D59-83BE-4CB0-A526-B949667FBAF0}|BTL.csproj|d:\\hkii 2024\\l\u1EADp tr\u00ECnh .net\\btl\\loaisp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E3065D59-83BE-4CB0-A526-B949667FBAF0}|BTL.csproj|solutionrelative:loaisp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{E3065D59-83BE-4CB0-A526-B949667FBAF0}|BTL.csproj|D:\\HKII 2023 - 2024\\BTL\\class\\functions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3065D59-83BE-4CB0-A526-B949667FBAF0}|BTL.csproj|solutionrelative:class\\functions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3065D59-83BE-4CB0-A526-B949667FBAF0}|BTL.csproj|D:\\HKII 2023 - 2024\\BTL\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3065D59-83BE-4CB0-A526-B949667FBAF0}|BTL.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,44 +26,58 @@
       "DocumentGroups": [
         {
           "DockedWidth": 289,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "SP.cs",
-              "DocumentMoniker": "D:\\HKII 2024\\L\u1EADp tr\u00ECnh .Net\\BTL\\SP.cs",
-              "RelativeDocumentMoniker": "SP.cs",
-              "ToolTip": "D:\\HKII 2024\\L\u1EADp tr\u00ECnh .Net\\BTL\\SP.cs",
-              "RelativeToolTip": "SP.cs",
-              "ViewState": "AQIAABUAAAAAAAAAAAAAACMAAAAJAAAA",
+              "DocumentMoniker": "D:\\HKII 2023 - 2024\\BTL\\Forms\\SP.cs",
+              "RelativeDocumentMoniker": "Forms\\SP.cs",
+              "ToolTip": "D:\\HKII 2023 - 2024\\BTL\\Forms\\SP.cs",
+              "RelativeToolTip": "Forms\\SP.cs",
+              "ViewState": "AQIAAK0AAAAAAAAAAAAkwAoBAAA7AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T16:03:41.931Z",
+              "WhenOpened": "2024-06-05T12:01:43.971Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "LoaiSP.cs [Design]",
-              "DocumentMoniker": "D:\\HKII 2024\\L\u1EADp tr\u00ECnh .Net\\BTL\\LoaiSP.cs",
-              "RelativeDocumentMoniker": "LoaiSP.cs",
-              "ToolTip": "D:\\HKII 2024\\L\u1EADp tr\u00ECnh .Net\\BTL\\LoaiSP.cs [Design]",
-              "RelativeToolTip": "LoaiSP.cs [Design]",
+              "DocumentIndex": 1,
+              "Title": "SP.cs [Design]",
+              "DocumentMoniker": "D:\\HKII 2023 - 2024\\BTL\\Forms\\SP.cs",
+              "RelativeDocumentMoniker": "Forms\\SP.cs",
+              "ToolTip": "D:\\HKII 2023 - 2024\\BTL\\Forms\\SP.cs [Design]",
+              "RelativeToolTip": "Forms\\SP.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T14:48:41.148Z",
+              "WhenOpened": "2024-06-05T12:01:36.683Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "SP.cs [Design]",
-              "DocumentMoniker": "D:\\HKII 2024\\L\u1EADp tr\u00ECnh .Net\\BTL\\SP.cs",
-              "RelativeDocumentMoniker": "SP.cs",
-              "ToolTip": "D:\\HKII 2024\\L\u1EADp tr\u00ECnh .Net\\BTL\\SP.cs [Design]",
-              "RelativeToolTip": "SP.cs [Design]",
+              "DocumentIndex": 2,
+              "Title": "Functions.cs",
+              "DocumentMoniker": "D:\\HKII 2023 - 2024\\BTL\\Class\\Functions.cs",
+              "RelativeDocumentMoniker": "Class\\Functions.cs",
+              "ToolTip": "D:\\HKII 2023 - 2024\\BTL\\Class\\Functions.cs",
+              "RelativeToolTip": "Class\\Functions.cs",
+              "ViewState": "AQIAAGUAAAAAAAAAAAAnwHAAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T14:45:36.47Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-06-02T10:28:36.984Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\HKII 2023 - 2024\\BTL\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\HKII 2023 - 2024\\BTL\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAgwBIAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-02T08:55:30.189Z",
+              "EditorCaption": ""
             }
           ]
         },
