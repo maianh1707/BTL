@@ -174,108 +174,131 @@ namespace WindowsFormsApp1.Forms
 
         private void btnluu_Click(object sender, EventArgs e)
         {
-            string sql;
-            double sl, SLcon, tong, Tongmoi;
+             string sql;
+ double sl, SLcon, tong, Tongmoi;
 
-            sql = "SELECT mahdb FROM tblhoadonban WHERE mahdb=N'" + txtmahoadonban.Text + "'";
-            if (!Function.CheckKey(sql))
-            {
-                if (txtngayban.Text.Length == 0)
-                {
-                    MessageBox.Show("Bạn phải nhập ngày bán", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txtngayban.Focus();
-                    return;
-                }
-                if (cbomanhanvien.Text.Length == 0)
-                {
-                    MessageBox.Show("Bạn phải nhập nhân viên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    cbomanhanvien.Focus();
-                    return;
-                }
-                if (cbomakhach.Text.Length == 0)
-                {
-                    MessageBox.Show("Bạn phải nhập khách hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    cbomakhach.Focus();
-                    return;
-                }
-                if (cbomaco.Text.Length == 0)
-                {
-                    MessageBox.Show("Bạn phải nhập cỡ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    cbomaco.Focus();
-                    return;
-                }
-                if (cbomamau.Text.Length == 0)
-                {
-                    MessageBox.Show("Bạn phải nhập màu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    cbomamau.Focus();
-                    return;
-                }
+ sql = "SELECT mahdb FROM tblhoadonban WHERE mahdb=N'" + txtmahoadonban.Text + "'";
+ if (!Function.CheckKey(sql))
+ {
+     DateTime ngayban;
+     if (!DateTime.TryParse(txtngayban.Text.Trim(), out ngayban))
+     {
+         MessageBox.Show("Bạn phải nhập ngày bán hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+         txtngayban.Focus();
+         return;
+     }
+     if (cbomanhanvien.Text.Length == 0)
+     {
+         MessageBox.Show("Bạn phải nhập nhân viên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+         cbomanhanvien.Focus();
+         return;
+     }
+     if (cbomakhach.Text.Length == 0)
+     {
+         MessageBox.Show("Bạn phải nhập khách hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+         cbomakhach.Focus();
+         return;
+     }
+     if (cbomaco.Text.Length == 0)
+     {
+         MessageBox.Show("Bạn phải nhập cỡ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+         cbomaco.Focus();
+         return;
+     }
+     if (cbomamau.Text.Length == 0)
+     {
+         MessageBox.Show("Bạn phải nhập màu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+         cbomamau.Focus();
+         return;
+     }
 
-                sql = "INSERT INTO tblhoadonban(mahdb, ngayban, manv, makh, tongtien) VALUES(N'" + txtmahoadonban.Text.Trim() + "', '" +
-                      Function.ConvertDateTime(txtngayban.Text.Trim()) + "',N'" + cbomanhanvien.SelectedValue + "',N'" +
-                      cbomakhach.SelectedValue + "'," + txttongtien.Text + ")";
-                Function.RunSql(sql);
-            }
+     sql = "INSERT INTO tblhoadonban(mahdb, ngayban, manv, makh, tongtien) VALUES(N'" + txtmahoadonban.Text.Trim() + "', '" +
+           ngayban.ToString("yyyy-MM-dd") + "',N'" + cbomanhanvien.SelectedValue + "',N'" +
+           cbomakhach.SelectedValue + "'," + (txttongtien.Text == "" ? "0" : txttongtien.Text) + ")";
+     Function.RunSql(sql);
+ }
 
-            if (cbomasanpham.Text.Trim().Length == 0)
-            {
-                MessageBox.Show("Bạn phải nhập mã hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                cbomasanpham.Focus();
-                return;
-            }
-            if ((txtsoluong.Text.Trim().Length == 0) || (txtsoluong.Text == "0"))
-            {
-                MessageBox.Show("Bạn phải nhập số lượng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtsoluong.Text = "";
-                txtsoluong.Focus();
-                return;
-            }
-            if (txtgiamgia.Text.Trim().Length == 0)
-            {
-                MessageBox.Show("Bạn phải nhập giảm giá", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtgiamgia.Focus();
-                return;
-            }
+ if (cbomasanpham.Text.Trim().Length == 0)
+ {
+     MessageBox.Show("Bạn phải nhập mã hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+     cbomasanpham.Focus();
+     return;
+ }
 
-            sql = "SELECT masanpham FROM tblchitiethdb WHERE masanpham=N'" + cbomasanpham.SelectedValue + "' AND mahdb = N'" + txtmahoadonban.Text.Trim() + "'";
-            if (Function.CheckKey(sql))
-            {
-                MessageBox.Show("Mã hàng này đã có, bạn phải nhập mã khác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                ResetValuesHang();
-                cbomasanpham.Focus();
-                return;
-            }
+ double soluong;
+ if (!double.TryParse(txtsoluong.Text.Trim(), out soluong) || soluong <= 0)
+ {
+     MessageBox.Show("Bạn phải nhập số lượng hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+     txtsoluong.Focus();
+     return;
+ }
 
-            sl = Convert.ToDouble(Function.GetFieldValues("SELECT soluong FROM tblsanpham WHERE masanpham = N'" + cbomasanpham.SelectedValue + "'"));
-            if (Convert.ToDouble(txtsoluong.Text) > sl)
-            {
-                MessageBox.Show("Số lượng mặt hàng này chỉ còn " + sl, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtsoluong.Text = "";
-                txtsoluong.Focus();
-                return;
-            }
+ double giamgia;
+ if (!double.TryParse(txtgiamgia.Text.Trim(), out giamgia))
+ {
+     MessageBox.Show("Bạn phải nhập giảm giá hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+     txtgiamgia.Focus();
+     return;
+ }
 
-            sql = "INSERT INTO tblchitiethdb(mahdb, masanpham, maco, mamau, soluongxuat, dongiaban, giamgia, thanhtien) " +
-                  "VALUES(N'" + txtmahoadonban.Text.Trim() + "', N'" + cbomasanpham.SelectedValue + "', N'" + cbomaco.SelectedValue + "',N'" + cbomamau.SelectedValue + "'," + txtsoluong.Text + ", " +
-                  txtdongiaban.Text + ", " + txtgiamgia.Text + ", " + txtthanhtien.Text + ")";
-            Function.RunSql(sql);
-            Load_DataGridViewChitiet();
+ sql = "SELECT masanpham FROM tblchitiethdb WHERE masanpham=N'" + cbomasanpham.SelectedValue + "' AND mahdb = N'" + txtmahoadonban.Text.Trim() + "'";
+ if (Function.CheckKey(sql))
+ {
+     MessageBox.Show("Mã hàng này đã có, bạn phải nhập mã khác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+     ResetValuesHang();
+     cbomasanpham.Focus();
+     return;
+ }
 
-            // Cập nhật số lượng hàng tồn kho
-            SLcon = sl - Convert.ToDouble(txtsoluong.Text);
-            sql = "UPDATE tblsanpham SET soluong =" + SLcon + " WHERE masanpham= N'" + cbomasanpham.SelectedValue + "'";
-            Function.RunSql(sql);
+ string slStr = Function.GetFieldValues("SELECT soluong FROM tblchitietsp WHERE masanpham = N'" + cbomasanpham.SelectedValue + "'");
+ if (!double.TryParse(slStr, out sl))
+ {
+     MessageBox.Show("Số lượng không hợp lệ hoặc không có sẵn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+     return;
+ }
 
-            // Cập nhật tổng số tiền cho hóa đơn
-            tong = Convert.ToDouble(Function.GetFieldValues("SELECT tongtien FROM tblhoadonban WHERE mahdb = N'" + txtmahoadonban.Text + "'"));
-            Tongmoi = tong + Convert.ToDouble(txtthanhtien.Text);
-            sql = "UPDATE tblhoadonban SET tongtien =" + Tongmoi + " WHERE mahdb = N'" + txtmahoadonban.Text + "'";
-            Function.RunSql(sql);
-            txttongtien.Text = Tongmoi.ToString();
-            lblbangchu.Text = "Bằng chữ: " + Function.ChuyenSoSangChu(Tongmoi.ToString());
+ if (soluong > sl)
+ {
+     MessageBox.Show("Số lượng mặt hàng này chỉ còn " + sl, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+     txtsoluong.Text = "";
+     txtsoluong.Focus();
+     return;
+ }
 
-            btnxoa.Enabled = true;
-            btnin.Enabled = true;
+ double dongiaban, thanhtien;
+ if (!double.TryParse(txtdongiaban.Text.Trim(), out dongiaban) || !double.TryParse(txtthanhtien.Text.Trim(), out thanhtien))
+ {
+     MessageBox.Show("Đơn giá bán hoặc thành tiền không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+     return;
+ }
+
+ sql = "INSERT INTO tblchitiethdb(mahdb, masanpham, maco, mamau, soluongxuat, dongiaban, giamgia, thanhtien) " +
+       "VALUES(N'" + txtmahoadonban.Text.Trim() + "', N'" + cbomasanpham.SelectedValue + "', N'" + cbomaco.SelectedValue + "',N'" + cbomamau.SelectedValue + "'," + soluong + ", " +
+       dongiaban + ", " + giamgia + ", " + thanhtien + ")";
+ Function.RunSql(sql);
+ Load_DataGridViewChitiet();
+
+ // Cập nhật số lượng hàng tồn kho
+ SLcon = sl - soluong;
+ sql = "UPDATE tblchitietsp SET soluong =" + SLcon + " WHERE masanpham= N'" + cbomasanpham.SelectedValue + "'";
+ Function.RunSql(sql);
+
+ // Cập nhật tổng số tiền cho hóa đơn
+ string tongStr = Function.GetFieldValues("SELECT tongtien FROM tblhoadonban WHERE mahdb = N'" + txtmahoadonban.Text + "'");
+ if (!double.TryParse(tongStr, out tong))
+ {
+     MessageBox.Show("Tổng tiền không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+     return;
+ }
+
+ Tongmoi = tong + thanhtien;
+ sql = "UPDATE tblhoadonban SET tongtien =" + Tongmoi + " WHERE mahdb = N'" + txtmahoadonban.Text + "'";
+ Function.RunSql(sql);
+ txttongtien.Text = Tongmoi.ToString();
+ lblbangchu.Text = "Bằng chữ: " + Function.ChuyenSoSangChu(Tongmoi.ToString());
+
+ btnxoa.Enabled = true;
+ btnin.Enabled = true;
 
         }
         private void ResetValuesHang()
